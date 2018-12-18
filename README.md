@@ -9,11 +9,17 @@ This project is inspired from etherscan.io
 
         geth --identity "NodeName" --networkid 888 --rpc --rpcport "8545" --rpccorsdomain "*" --rpcaddr "a.b.c.d" --datadir "./chaindata/" --port "30330" --nodiscover --rpcapi "db,eth,net,web3,personal"
 
-2. Edit "serverConfig.js"
-        Set "ChainIpAddr" property equal to IP addr of the system running the private network. ( same as used in step 1).
-        OR
-        You can set it to 'localhost' if ethereum chain is running on your local machine.        
-        You can also set other configurations also.
+2. Edited "serverConfig.js"
+changed ChainIP address to : ChainIpAddr: "ganache-cli-container", to address over network container by name
+build the container:
+```docker build -t eshnil2000/dappsuni-ganache-cli . ```
+
+Create a network in docker, start 
+```
+echo $ssh->exec('docker network create ganache-cli');
+echo $ssh->exec('docker run -dt --name ganache-cli-container --net ganache-cli -p 8545:8545 eshnil2000/dappsuni-ganache-cli');
+echo $ssh->exec('docker run --net ganache-cli -d -p 8546:8546 --name eth-explore eshnil2000/private-eth-explorer');
+```
 
 3. Run "npm start".
         The app is running on "localhost:port" defined in "serverConfig.js" (default : localhost:8546).      
