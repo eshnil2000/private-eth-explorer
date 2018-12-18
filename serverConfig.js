@@ -6,7 +6,7 @@
 
 const config = {
     ChainPortNo: 8545,
-    ChainIpAddr: "0.0.0.0", // IP address of the system running private ethereum chain
+    ChainIpAddr: "ganache-cli-container", // IP address of the system running private ethereum chain
     WebPortNo: 8546
 };
 
