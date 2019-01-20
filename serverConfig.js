@@ -5,7 +5,7 @@
 // --rpccorsdomain "*" --> Allow all the system to connect to this node.
 
 const config = {
-    ChainPortNo: 8545,
+    ChainPortNo: 7852,
     ChainIpAddr: "ganache-cli-container", // IP address of the system running private ethereum chain
     WebPortNo: 8546
 };
