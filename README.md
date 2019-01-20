@@ -1,3 +1,12 @@
+# REQUIRED CHANGE - In serverConfig.js, make sure ChainIpAddr points to ganache-cli container name
+```
+const config = {
+    ChainPortNo: 8545,
+    ChainIpAddr: "ganache-cli-container", // IP address of the system running private ethereum chain
+    WebPortNo: 8546
+};
+```
+
 # SampleDapp
 Blockchain Explorer for my private ethereum block.
 
